@@ -19,10 +19,12 @@ export async function OPTIONS() {
 }
 
 export async function GET(request: NextRequest) {
-  const domain = "https://www.allthingssour.com";
+  const domain = "allthingssour.com";
 
   const url = request.nextUrl;
-  if (url.origin !== domain) {
+  console.log(url);
+  console.log(url.hostname);
+  if (url.hostname !== domain) {
     return NextResponse.json({ error: "Not allowed" }, { status: 403 });
   }
 
