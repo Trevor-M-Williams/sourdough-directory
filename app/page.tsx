@@ -5,11 +5,11 @@ import { generateRecipe } from "@/actions/openai";
 import { useState } from "react";
 import { getCollectionDetails } from "@/actions/webflow";
 import { testWebflowUpload } from "@/actions/webflow";
-import { CollectionField, Collection } from "@/types";
+import { Webflow } from "webflow-api";
 
 export default function Home() {
   const [recipeName, setRecipeName] = useState("");
-  const [collection, setCollection] = useState<Collection | null>(null);
+  const [collection, setCollection] = useState<Webflow.Collection | null>(null);
 
   const handleGetCollectionDetails = async () => {
     const collection = await getCollectionDetails();
@@ -47,7 +47,7 @@ export default function Home() {
       <Button onClick={() => testWebflowUpload()}>Test Upload</Button>
       {collection && (
         <div>
-          {collection.fields.map((field: CollectionField) => (
+          {collection.fields.map((field: Webflow.Field) => (
             <div key={field.id}>
               {field.displayName}: {field.slug}
             </div>
