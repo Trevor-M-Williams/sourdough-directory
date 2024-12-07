@@ -5,27 +5,11 @@ import { generateRecipe } from "@/actions/openai";
 import { useState } from "react";
 import { getCollectionDetails } from "@/actions/webflow";
 import { testWebflowUpload } from "@/actions/webflow";
-
-type CollectionField = {
-  id: string;
-  isEditable: boolean;
-  isRequired: boolean;
-  type: string;
-  slug: string;
-  displayName: string;
-  validations: {
-    options:
-      | {
-          name: string;
-          id: string;
-        }[]
-      | null;
-  };
-};
+import { CollectionField, Collection } from "@/types";
 
 export default function Home() {
   const [recipeName, setRecipeName] = useState("");
-  const [collection, setCollection] = useState<any>(null);
+  const [collection, setCollection] = useState<Collection | null>(null);
 
   const handleGetCollectionDetails = async () => {
     const collection = await getCollectionDetails();
