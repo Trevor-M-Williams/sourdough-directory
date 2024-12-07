@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { WebflowClient } from "webflow-api";
 
 const client = new WebflowClient({
@@ -18,7 +18,7 @@ export async function OPTIONS() {
   return NextResponse.json({}, options);
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const data = await client.collections.items.listItemsLive(
       process.env.WEBFLOW_COLLECTION_ID!,
