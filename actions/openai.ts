@@ -5,14 +5,8 @@ import { zodResponseFormat } from "openai/helpers/zod";
 import { z } from "zod";
 import { createWebflowItem } from "./webflow";
 import { generateImage } from "./leonardo";
+import { Category } from "@/types";
 const openai = new OpenAI();
-
-enum Category {
-  BasicLoaves = "Basic Loaves",
-  FlavoredAndSpecialityLoaves = "Flavored and Specialty Loaves",
-  CookingAndBaking = "Cooking and Baking",
-  International = "International",
-}
 
 const RecipeSchema = z.object({
   name: z.string(),
@@ -23,6 +17,10 @@ const RecipeSchema = z.object({
   cookTime: z.string(),
   servings: z.number(),
   calories: z.number(),
+});
+
+const RecipeIdeasSchema = z.object({
+  recipeIdeas: z.array(z.string()),
 });
 
 export async function generateRecipe(recipeName: string) {
@@ -72,6 +70,34 @@ export async function generateRecipe(recipeName: string) {
   return {
     success: true,
     message: `Recipe for ${recipe.name} created successfully`,
+  };
+}
+
+export async function generateRecipeIdeas(category: Category) {
+  console.log("Generating recipe ideas for category:", category);
+
+  const completion = await openai.beta.chat.completions.parse({
+    model: "gpt-4o-mini",
+    messages: [
+      {
+        role: "system",
+        content:
+          "You are a creative sourdough recipe expert. Generate unique and interesting recipe names that would be appealing to home bakers.",
+      },
+      {
+        role: "user",
+        content: `Generate 10 potential ${category} sourdough recipe ideas, just the names. Be creative but make sure they are realistic and appealing.`,
+      },
+    ],
+    response_format: zodResponseFormat(RecipeIdeasSchema, "recipeIdeas"),
+  });
+
+  const ideas = completion.choices[0].message.parsed;
+  if (!ideas) throw new Error("Failed to generate recipe ideas");
+
+  return {
+    success: true,
+    ideas: ideas.recipeIdeas,
   };
 }
 
