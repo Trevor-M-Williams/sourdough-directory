@@ -1,0 +1,143 @@
+{
+  "@context": "http://schema.org/",
+  "@type": "Recipe",
+  "name": "Double Cheeseburger Recipe",
+  "image": [
+    "https://d2u7wtg03zvmhj.cloudfront.net/images.compress/compressed/c/4/f/c4f2453f-32ea-4dd7-b901-88df9cd24d58.png"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Omar Choudhry",
+    "brand": "Guilty Chef",
+    "jobTitle": "Head Chef",
+    "image": "https://cdn.prod.website-files.com/6413018be9e64bfc7f0c3a19/65f3deaac32056ed78836bd4_omar-choudhry-guilty-chef.jpg"
+  },
+  "datePublished": "2024-03-16",
+  "description": "Master the art of the classic Double Cheeseburger with this quick and easy recipe.",
+  "prepTime": "PT20M",
+  "cookTime": "PT10M",
+  "totalTime": "PT30M",
+  "keywords": "Double Cheeseburger, Burger Recipe, Homemade Burger, Easy Dinner, Family Meal",
+  "recipeYield": "4",
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "American",
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "520 calories",
+    "carbohydrateContent": "32 g",
+    "proteinContent": "29 g",
+    "fatContent": "32 g",
+    "saturatedFatContent": "14 g",
+    "cholesterolContent": "100 mg",
+    "sodiumContent": "780 mg",
+    "fibreContent": "2 g",
+    "sugarContent": "5 g",
+    "servingSize": "1 serving"
+  },
+  "recipeIngredient": [
+    "400g ground beef (20% fat for juiciness)",
+    "4 slices of cheddar cheese",
+    "4 burger buns, preferably sesame seeded",
+    "4 tsp mustard",
+    "4 tsp ketchup",
+    "1 small onion, finely sliced",
+    "8 pickle slices",
+    "Salt and pepper to taste",
+    "1 tbsp vegetable oil, for cooking",
+    "Lettuce for topping, washed and dried"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Form patties",
+      "text": "Divide the beef into 8 equal portions and form each into a thin patty slightly larger than your bun. Season both sides with salt and pepper."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook patties",
+      "text": "Heat a pan or grill on medium-high heat. Add the vegetable oil. When it's hot, cook the patties for about 2-3 minutes on each side, or until nicely browned. Place a slice of cheese on 4 of the patties during the last minute of cooking to let it melt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Toast buns",
+      "text": "Toast the burger buns lightly on the pan for a minute or until they are slightly crispy."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Assemble burgers",
+      "text": "To assemble the burgers, spread a teaspoon of mustard and ketchup on the bottom halves of the buns. Then, place a slice of cheese-covered patty on each, followed by a second patty."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add toppings",
+      "text": "Top the patties with finely sliced onions, 2 pickle slices per burger, and lettuce. Cap with the top bun."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Serve",
+      "text": "Serve your double cheeseburgers immediately for the best taste. Enjoy your homemade masterpiece with your favourite side of fries or a fresh salad."
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "162"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": "Maria Lopez",
+      "datePublished": "2024-04-02",
+      "reviewBody": "This Double Cheeseburger recipe is a game changer! Delicious, juicy and melt in your mouth! A definite family favourite. ",
+      "name": "Game Changer",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Chen Wei",
+      "datePublished": "2024-04-05",
+      "reviewBody": "I am so in love with this burger recipe! The instructions were simple and the result was absolutely amazing!",
+      "name": "Burger Love",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Alejandra Ruiz",
+      "datePublished": "2024-04-10",
+      "reviewBody": "These burgers were so good! I adore onions on burgers and this recipe promised and delivered. Will definitely be using this recipe again.",
+      "name": "A Must-Try Recipe",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Benjamin O'Leary",
+      "datePublished": "2024-04-15",
+      "reviewBody": "I've made these burgers for a Sunday family dinner and there were no leftovers! The combination of flavours is truly outstanding.",
+      "name": "Outstanding Flavour",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Yasmin Sharma",
+      "datePublished": "2024-04-20",
+      "reviewBody": "The best burger recipe bar none! It's a hit in the family, no more takeaway burgers for us.",
+      "name": "Best Burger Recipe",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    }
+  ]
+}
