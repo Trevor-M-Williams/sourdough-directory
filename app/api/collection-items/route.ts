@@ -19,15 +19,6 @@ export async function OPTIONS() {
 }
 
 export async function GET(request: NextRequest) {
-  const domain = "allthingssour.com";
-
-  const url = request.nextUrl;
-  console.log(url);
-  console.log(url.hostname);
-  if (url.hostname !== domain) {
-    return NextResponse.json({ error: "Not allowed" }, { status: 403 });
-  }
-
   try {
     const data = await client.collections.items.listItemsLive(
       process.env.WEBFLOW_COLLECTION_ID!,
