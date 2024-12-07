@@ -5,9 +5,22 @@ const client = new WebflowClient({
   accessToken: process.env.WEBFLOW_API_KEY!,
 });
 
-const domain = "https://www.allthingssour.com";
+const options = {
+  status: 200,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+  },
+};
+
+export async function OPTIONS() {
+  return NextResponse.json({}, options);
+}
 
 export async function GET(request: NextRequest) {
+  const domain = "https://www.allthingssour.com";
+
   const url = request.nextUrl;
   if (url.origin !== domain) {
     return NextResponse.json({ error: "Not allowed" }, { status: 403 });
