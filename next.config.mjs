@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.prod.website-files.com",
+      },
+    ],
+  },
   async headers() {
     return [
       {
-        images: {
-          remotePatterns: [
-            {
-              protocol: "https",
-              hostname: "cdn.prod.website-files.com",
-            },
-          ],
-        },
         source: "/api/(.*)",
         headers: [
           {
