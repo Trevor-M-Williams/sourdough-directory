@@ -1,0 +1,402 @@
+[
+  {
+    "id": "675710be823783de5a7af6aa",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:48:12.831Z",
+    "createdOn": "2024-12-09T15:46:06.935Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 12,
+      "calories": 180,
+      "name": "Cinnamon Raisin Morning Delight",
+      "ingredients": "* 3 cups all-purpose flour\n* 1 cup warm milk (110°F)\n* 1/4 cup granulated sugar\n* 1/2 cup unsalted butter, melted\n* 1/2 cup raisins\n* 2 large eggs\n* 1 packet (2 1/4 tsp) active dry yeast\n* 1 tsp ground cinnamon\n* 1/2 tsp salt\n* 1/4 tsp ground nutmeg\n* 1/2 cup chopped walnuts (optional)\n* 1 tablespoon honey (for glazing)",
+      "instructions": "1. In a small bowl, combine warm milk and sugar. Sprinkle yeast over the top and let sit for about 5-10 minutes, or until frothy.\n2. In a large mixing bowl, mix flour, salt, cinnamon, and nutmeg together.\n3. Add the melted butter, eggs, and yeast mixture to the dry ingredients. Stir until a dough forms.\n4. Knead the dough on a floured surface for about 10 minutes, until smooth and elastic.\n5. Incorporate raisins and walnuts (if using) into the dough during the last minutes of kneading.\n6. Place the dough in a greased bowl, cover with a damp cloth, and let rise in a warm place for about 1 to 1.5 hours, or until doubled in size.\n7. Preheat the oven to 350°F (175°C).\n8. After the dough has risen, punch it down and shape it into a loaf. Place it in a greased 9x5 inch loaf pan.\n9. Cover and let rise for another 30-45 minutes until it has risen above the edge of the pan.\n10. Brush the top of the loaf with honey before placing it in the oven.\n11. Bake for 30-35 minutes or until golden brown and a toothpick inserted into the center comes out clean.\n12. Let the bread cool in the pan for 10 minutes before transferring to a wire rack to cool completely.",
+      "prep-time-2": "15 minutes",
+      "cook-time": "35 minutes",
+      "image": {
+        "fileId": "675710be823783de5a7af68c",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/675710be823783de5a7af68c_Leonardo_Lightning_XL_Cinnamon_Raisin_Morning_Delight_0.jpeg",
+        "alt": null
+      },
+      "slug": "cinnamon-raisin-morning-delight"
+    }
+  },
+  {
+    "id": "67549768a318590a52abec44",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:49:02.693Z",
+    "createdOn": "2024-12-07T18:43:52.389Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 12,
+      "calories": 240,
+      "name": "Cinnamon Swirl Sourdough Braid",
+      "ingredients": "* 3 cups all-purpose flour\n* 1 cup active sourdough starter\n* 1 cup warm water\n* 1/4 cup sugar\n* 1 teaspoon salt\n* 1 teaspoon cinnamon\n* 1/4 cup unsalted butter, melted\n* 1 egg, beaten (for egg wash)\n* 1/2 cup brown sugar\n* 1 tablespoon ground cinnamon\n* 1/2 cup chopped nuts (optional)",
+      "instructions": "1. In a large mixing bowl, combine the flour and salt. In a separate bowl, mix the warm water, sourdough starter, and sugar until well blended.\n2. Pour the liquid mixture into the dry ingredients and stir until a shaggy dough forms.\n3. Knead the dough on a floured surface for about 10 minutes until smooth and elastic. Place it in a greased bowl, cover with a damp cloth, and let it rise for about 4-6 hours or until doubled in size.\n4. Once the dough has risen, punch it down and roll it out into a large rectangle (about 12x18 inches).\n5. Brush the melted butter over the dough and sprinkle the brown sugar and cinnamon mixture evenly, followed by adding nuts if using.\n6. Starting from one long side, tightly roll the dough into a log and pinch the edges to seal.\n7. Place the log seam-side down on a floured surface and braid it by cutting it in half lengthwise and twisting the two halves together.\n8. Transfer the braided loaf to a lined baking sheet and cover it with a kitchen towel, allowing it to rise again for about 1-2 hours until puffed up.\n9. Preheat the oven to 350°F (175°C). Brush the loaf with the beaten egg for a shiny finish.\n10. Bake for 30-35 minutes or until golden brown and sounds hollow when tapped on the bottom.\n11. Let the loaf cool on a wire rack before slicing.",
+      "prep-time-2": "6 hours",
+      "cook-time": "35 minutes",
+      "image": {
+        "fileId": "67549768a318590a52abec34",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/67549768a318590a52abec34_Leonardo_Lightning_XL_Cinnamon_Swirl_Sourdough_Braid_0.jpeg",
+        "alt": null
+      },
+      "slug": "cinnamon-swirl-sourdough-braid"
+    }
+  },
+  {
+    "id": "6757107b83bfc4b5858e4d94",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:48:33.873Z",
+    "createdOn": "2024-12-09T15:44:59.790Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 12,
+      "calories": 280,
+      "name": "Cocoa Espresso Dream Loaf",
+      "ingredients": "* 2 cups all-purpose flour\n* 1 cup granulated sugar\n* 1/2 cup unsweetened cocoa powder\n* 1 tablespoon instant espresso powder\n* 1 teaspoon baking soda\n* 1/2 teaspoon baking powder\n* 1/2 teaspoon salt\n* 1/2 cup unsalted butter, softened\n* 1 cup buttermilk\n* 2 large eggs\n* 1 teaspoon vanilla extract\n* 1/2 cup chocolate chips\n* 1/4 cup brewed espresso, cooled",
+      "instructions": "1. Preheat your oven to 350°F (175°C) and grease a 9x5-inch loaf pan.\n2. In a large bowl, whisk together the flour, sugar, cocoa powder, instant espresso powder, baking soda, baking powder, and salt.\n3. In another bowl, cream the softened butter until light and fluffy. Add the buttermilk, eggs, and vanilla extract, mixing until well combined.\n4. Gradually add the dry ingredients to the wet mixture, stirring until just combined.\n5. Fold in the chocolate chips and cooled espresso until evenly distributed.\n6. Pour the batter into the prepared loaf pan and smooth the top with a spatula.\n7. Bake for 55-65 minutes or until a toothpick inserted into the center comes out clean.\n8. Allow to cool in the pan for 10 minutes, then transfer the loaf to a wire rack to cool completely.",
+      "prep-time-2": "15 minutes",
+      "cook-time": "65 minutes",
+      "image": {
+        "fileId": "6757107b83bfc4b5858e4d6b",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/6757107b83bfc4b5858e4d6b_Leonardo_Lightning_XL_Cocoa_Espresso_Dream_Loaf_0.jpeg",
+        "alt": null
+      },
+      "slug": "cocoa-espresso-dream-loaf"
+    }
+  },
+  {
+    "id": "675710a518ccc5bfcb1aa7fe",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:48:22.775Z",
+    "createdOn": "2024-12-09T15:45:41.800Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 12,
+      "calories": 180,
+      "name": "Golden Honey Oat Sourdough",
+      "ingredients": "* 1 cup active sourdough starter\n* 1 1/2 cups warm water (110°F)\n* 2 tablespoons honey\n* 2 cups rolled oats\n* 3 cups bread flour\n* 1 teaspoon salt",
+      "instructions": "1. In a large mixing bowl, combine the active sourdough starter, warm water, and honey. Stir until the honey is dissolved.\n2. Add the rolled oats to the mixture and let sit for about 30 minutes to allow the oats to soften.\n3. Gradually add the bread flour and salt to the oat mixture, stirring until a shaggy dough forms.\n4. Transfer the dough to a floured surface and knead for 8-10 minutes, until it becomes smooth and elastic.\n5. Place the kneaded dough in a lightly oiled bowl, cover with a damp cloth, and let rise at room temperature for about 4-6 hours, or until doubled in size.\n6. Once risen, gently deflate the dough and shape it into a round loaf.\n7. Place the loaf on a parchment-lined baking sheet, cover it again, and let it proof for another 1-2 hours.\n8. Preheat the oven to 450°F (230°C) and place a baking stone or heavy baking dish inside for heating.\n9. Make a few slashes on the top of the loaf with a sharp knife or blade.\n10. Transfer the loaf to the hot stone or dish in the oven and bake for 30-35 minutes until the crust is golden and the internal temperature reaches 200°F (93°C).\n11. Allow the bread to cool on a wire rack for at least 30 minutes before slicing.",
+      "prep-time-2": "30 minutes",
+      "cook-time": "35 minutes",
+      "image": {
+        "fileId": "675710a518ccc5bfcb1aa638",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/675710a518ccc5bfcb1aa638_Leonardo_Lightning_XL_Golden_Honey_Oat_Sourdough_0.jpeg",
+        "alt": null
+      },
+      "slug": "golden-honey-oat-sourdough"
+    }
+  },
+  {
+    "id": "675710e86fb55a3b136fc621",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:46:50.689Z",
+    "createdOn": "2024-12-09T15:46:48.294Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 8,
+      "calories": 220,
+      "name": "Herbed Garlic Artisan Boule",
+      "ingredients": "* 3 cups all-purpose flour\n* 1 1/4 cups warm water (110°F)\n* 1 teaspoon sugar\n* 2 teaspoons salt\n* 1 tablespoon instant yeast\n* 4 cloves garlic, minced\n* 2 tablespoons mixed fresh herbs (such as rosemary, thyme, and parsley)\n* 1 tablespoon olive oil",
+      "instructions": "1. In a large mixing bowl, combine warm water and sugar. Sprinkle the yeast over the top and let it sit for about 5 minutes until foamy.\n2. Add the flour, salt, minced garlic, and mixed herbs to the yeast mixture. Stir until a shaggy dough forms.\n3. Knead the dough on a floured surface for about 10 minutes until it is smooth and elastic.\n4. Place the dough in a lightly greased bowl, cover with a damp cloth, and let it rise in a warm place for about 1 hour, or until doubled in size.\n5. Preheat your oven to 450°F (232°C).\n6. Gently punch down the dough and shape it into a round loaf. Place it on a parchment-lined baking sheet.\n7. Cover the loaf with a kitchen towel and let it rise for another 30 minutes.\n8. Just before baking, make a few shallow slashes on the top of the loaf with a sharp knife. Brush the top with olive oil.\n9. Bake the loaf in the preheated oven for 25-30 minutes, until golden brown and the loaf sounds hollow when tapped on the bottom.\n10. Remove from the oven, let cool on a wire rack before slicing, and enjoy.",
+      "prep-time-2": "15 minutes",
+      "cook-time": "30 minutes",
+      "slug": "herbed-garlic-artisan-boule",
+      "image": {
+        "fileId": "675710e76fb55a3b136fc595",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/675710e76fb55a3b136fc595_Leonardo_Lightning_XL_Herbed_Garlic_Artisan_Boule_0.jpeg",
+        "alt": null
+      }
+    }
+  },
+  {
+    "id": "67538e59b2c56773a781c5d9",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:49:30.144Z",
+    "createdOn": "2024-12-06T23:52:57.178Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "servings": 8,
+      "name": "Pumpkin Spice Sourdough",
+      "ingredients": "* 500g bread flour\n* 150g active sourdough starter\n* 250g water\n* 200g canned pumpkin puree\n* 50g brown sugar\n* 1 teaspoon vanilla extract\n* 2 teaspoons pumpkin spice blend\n* 10g salt\n* 50g chopped nuts (optional)\n* 50g dried cranberries (optional)",
+      "instructions": "1. In a large mixing bowl, combine the bread flour, brown sugar, pumpkin spice blend, and salt.\n2. In a separate bowl, mix the active sourdough starter, canned pumpkin puree, water, and vanilla extract until smooth.\n3. Pour the wet ingredients into the dry ingredients and mix until a rough dough forms.\n4. Knead the dough on a floured surface for about 10 minutes until it becomes smooth and elastic.\n5. Place the dough back in the bowl and cover it with a damp cloth. Let it rest at room temperature for 4-6 hours, or until it has doubled in size.\n6. After the first rise, gently deflate the dough and fold in the chopped nuts and dried cranberries if using.\n7. Shape the dough into a round loaf and place it in a floured proofing basket. Cover and let it proof for another 2-3 hours.\n8. Preheat the oven to 450°F (230°C) and place a Dutch oven inside to heat up.\n9. Once the dough has finished proofing, carefully transfer it to a piece of parchment paper. Score the top with a sharp knife.\n10. Using oven mitts, remove the hot Dutch oven from the oven and lift the parchment paper with the dough into the pot.\n11. Cover with the lid and return it to the oven. Bake for 30 minutes.\n12. After 30 minutes, remove the lid and bake for an additional 15-20 minutes until the crust is golden brown.\n13. Remove the bread from the oven and let it cool on a wire rack before slicing.",
+      "prep-time-2": "20 minutes",
+      "cook-time": "50 minutes",
+      "image": {
+        "fileId": "67538e58b2c56773a781c5d5",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/67538e58b2c56773a781c5d5_Leonardo_Lightning_XL_Pumpkin_Spice_Sourdough_0.jpeg",
+        "alt": null
+      },
+      "slug": "pumpkin-spice-sourdough",
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "calories": 200
+    }
+  },
+  {
+    "id": "6754977b9aa1eda4450ae80d",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:48:55.831Z",
+    "createdOn": "2024-12-07T18:44:11.118Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 12,
+      "calories": 200,
+      "name": "Roasted Garlic and Rosemary Sourdough Focaccia",
+      "ingredients": "* 2 cups all-purpose flour\n* 1 cup bread flour\n* 1/2 cup sourdough starter (active)\n* 1 1/4 cups warm water (about 110°F)\n* 2 teaspoons salt\n* 2 tablespoons olive oil (plus more for drizzling)\n* 6 cloves garlic (roasted)\n* 2 tablespoons fresh rosemary (chopped)\n* Coarse sea salt (for topping)",
+      "instructions": "1. In a large mixing bowl, combine the all-purpose flour, bread flour, and salt.\n2. In a separate bowl, mix the warm water and active sourdough starter until well blended.\n3. Slowly add the wet mixture to the flour mixture, stirring until a shaggy dough forms.\n4. Add the olive oil and knead the dough for about 5-7 minutes until it becomes smooth and elastic.\n5. Transfer the dough to a lightly oiled bowl, cover with plastic wrap or a damp cloth, and let it rest for 4-6 hours at room temperature until it has doubled in size.\n6. After the dough has risen, gently punch it down to release the air, then fold in the roasted garlic and chopped rosemary.\n7. Grease a baking tray generously with olive oil, then transfer the dough onto the tray, stretching it carefully to fit.\n8. Cover the dough again and let it rest for another 1-2 hours until puffy.\n9. Preheat the oven to 425°F (220°C).\n10. Dimple the dough with your fingers, drizzle with more olive oil, and sprinkle coarse sea salt on top.\n11. Bake the focaccia in the preheated oven for 20-25 minutes or until golden brown and crispy on top.\n12. Once baked, remove from the oven, let cool slightly, and cut into squares. Serve warm.",
+      "prep-time-2": "8 hours",
+      "cook-time": "25 minutes",
+      "slug": "roasted-garlic-and-rosemary-sourdough-focaccia",
+      "image": {
+        "fileId": "6754977a9aa1eda4450ae7ef",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/6754977a9aa1eda4450ae7ef_Leonardo_Lightning_XL_Roasted_Garlic_and_Rosemary_Sourdough_Fo_0.jpeg",
+        "alt": null
+      }
+    }
+  },
+  {
+    "id": "675710b21a765c5f1e8f65fb",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:48:19.195Z",
+    "createdOn": "2024-12-09T15:45:54.121Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 8,
+      "calories": 220,
+      "name": "Rustic Herb Garden Sourdough",
+      "ingredients": "* 500g bread flour\n* 350ml water\n* 150g sourdough starter\n* 10g salt\n* 2 tablespoons olive oil\n* 1 tablespoon fresh rosemary, chopped\n* 1 tablespoon fresh thyme, chopped\n* 1 tablespoon fresh oregano, chopped\n* 1 teaspoon garlic powder",
+      "instructions": "1. In a large bowl, mix the bread flour and salt together.\n2. In a separate bowl, combine the water, sourdough starter, and olive oil. Mix until the starter is dissolved.\n3. Gradually add the wet ingredients to the dry ingredients, mixing until a shaggy dough forms.\n4. Add the chopped herbs and garlic powder to the dough, kneading to incorporate them evenly.\n5. Transfer the dough to a lightly floured surface and knead for about 10 minutes until smooth and elastic.\n6. Place the dough in a lightly oiled bowl, cover it with a damp cloth, and let it rise in a warm place for 4-6 hours, or until doubled in size.\n7. Once the dough has risen, gently deflate it and shape it into a round loaf.\n8. Place the shaped loaf on a parchment-lined baking sheet and cover it again to proof for another 1-2 hours.\n9. Preheat your oven to 450°F (232°C) with a Dutch oven inside for 30 minutes before baking.\n10. Carefully remove the hot Dutch oven, place the loaf inside (you can score the top for a decorative effect), and cover with the lid.\n11. Bake for 30 minutes covered, then remove the lid and bake for an additional 15-20 minutes until golden brown.\n12. Remove from the oven and let it cool on a wire rack before slicing.",
+      "prep-time-2": "20 minutes",
+      "cook-time": "50 minutes",
+      "image": {
+        "fileId": "675710b11a765c5f1e8f65ed",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/675710b11a765c5f1e8f65ed_Leonardo_Lightning_XL_Rustic_Herb_Garden_Sourdough_0.jpeg",
+        "alt": null
+      },
+      "slug": "rustic-herb-garden-sourdough"
+    }
+  },
+  {
+    "id": "6754963ebdafe5b3da8991b2",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:49:08.386Z",
+    "createdOn": "2024-12-07T18:38:54.404Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 10,
+      "calories": 190,
+      "name": "Savory Garden Herb Sourdough Loaf",
+      "ingredients": "* 3 cups bread flour\n* 1 cup active sourdough starter\n* 1 1/4 cups warm water\n* 1 tablespoon salt\n* 2 tablespoons olive oil\n* 1 tablespoon mixed dried herbs (e.g. thyme, rosemary, oregano)\n* 1 tablespoon minced fresh parsley\n* 1 teaspoon minced garlic\n* 1 teaspoon black pepper",
+      "instructions": "1. In a large mixing bowl, combine the bread flour, salt, black pepper, and dried herbs. Mix well.\n2. In a separate bowl, mix the active sourdough starter with warm water and olive oil until smooth.\n3. Pour the starter mixture into the flour mixture and combine until a dough forms.\n4. Add minced garlic and fresh parsley to the dough and knead for about 10 minutes until smooth and elastic.\n5. Cover the bowl with a damp cloth and let it rise in a warm place for about 4-6 hours, or until doubled in size.\n6. Once the dough has risen, turn it out onto a lightly floured surface and shape it into a round or oval loaf.\n7. Place the shaped dough in a proofing basket (or on a baking sheet) and let it rise for another 1-2 hours, covered.\n8. Preheat the oven to 450°F (230°C). If using a Dutch oven, place it in the oven to heat up as well.\n9. Once the dough has risen again, carefully place it onto a parchment paper-lined baking sheet or into the hot Dutch oven.\n10. Score the top of the loaf with a sharp knife for better oven spring.\n11. Bake in the preheated oven for 30-35 minutes, or until the crust is golden brown and hollow-sounding when tapped on the bottom.\n12. Remove from the oven and let it cool on a wire rack before slicing.",
+      "prep-time-2": "30 minutes",
+      "cook-time": "35 minutes",
+      "image": {
+        "fileId": "6754963ebdafe5b3da89913a",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/6754963ebdafe5b3da89913a_Leonardo_Lightning_XL_Savory_Garden_Herb_Sourdough_Loaf_0.jpeg",
+        "alt": null
+      },
+      "slug": "savory-garden-herb-sourdough-loaf"
+    }
+  },
+  {
+    "id": "675710d934904abc8cdf8565",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:47:25.486Z",
+    "createdOn": "2024-12-09T15:46:33.275Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 12,
+      "calories": 230,
+      "name": "Savory Mediterranean Focaccia",
+      "ingredients": "* 4 cups all-purpose flour\n* 1 packet (2 1/4 tsp) active dry yeast\n* 1 3/4 cups warm water (110°F)\n* 1/4 cup olive oil\n* 1 tablespoon sea salt\n* 1 tablespoon sugar\n* 1 teaspoon dried oregano\n* 1 teaspoon dried thyme\n* 1/2 cup pitted olives (Kalamata or green), sliced\n* 1/2 cup cherry tomatoes, halved\n* 1/4 cup thinly sliced red onion\n* Fresh rosemary sprigs for garnish\n* Flaky sea salt for topping",
+      "instructions": "1. In a large mixing bowl, combine warm water and sugar. Sprinkle yeast over the top and let it sit for about 5-10 minutes until it's foamy.\n2. Add in the olive oil, sea salt, oregano, and thyme to the yeast mixture. Stir to combine thoroughly.\n3. Gradually add the flour, mixing until the dough comes together. Knead the dough on a floured surface for about 5-7 minutes until it is smooth and elastic.\n4. Place the dough in a greased bowl and cover with a damp cloth. Allow it to rise in a warm place for 1-2 hours or until it doubles in size.\n5. Once risen, preheat the oven to 425°F (220°C).\n6. Grease a large baking sheet or a 12x17 inch pan with olive oil.\n7. Transfer the dough to the prepared pan and spread it out gently using your fingers. You can make dimples in the dough for a classic focaccia look.\n8. Evenly distribute the olives, cherry tomatoes, and red onion over the top of the dough, pressing them in slightly. Drizzle with olive oil and sprinkle with flaky sea salt.\n9. Let the dough rise again for about 20-30 minutes, then bake in the preheated oven for 20-25 minutes until golden brown.\n10. Remove from the oven and let cool slightly. Garnish with fresh rosemary sprigs before slicing and serving.",
+      "prep-time-2": "20 minutes",
+      "cook-time": "25 minutes",
+      "image": {
+        "fileId": "675710d834904abc8cdf8542",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/675710d834904abc8cdf8542_Leonardo_Lightning_XL_Savory_Mediterranean_Focaccia_0.jpeg",
+        "alt": null
+      },
+      "slug": "savory-mediterranean-focaccia"
+    }
+  },
+  {
+    "id": "67537d1c35f4646ffbb8aa39",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:49:34.252Z",
+    "createdOn": "2024-12-06T22:39:24.979Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "82eb8e8c4eeb2d01e41c54c9b98a1a00",
+      "servings": 4,
+      "name": "Sourdough Pancakes",
+      "ingredients": "* 1 cup sourdough starter (active and bubbly)\n* 1 cup all-purpose flour\n* 1 tablespoon sugar\n* 1/2 teaspoon salt\n* 1/2 teaspoon baking soda\n* 1 cup milk (or buttermilk)\n* 1 large egg\n* 2 tablespoons unsalted butter, melted\n* 1 teaspoon vanilla extract (optional)",
+      "instructions": "1. In a large bowl, mix together the sourdough starter, flour, sugar, and salt until well combined.\n2. In a separate bowl, whisk together the milk, egg, melted butter, and vanilla extract.\n3. Combine the wet ingredients with the dry ingredients, stirring just until incorporated; do not overmix. The batter should be slightly lumpy.\n4. Let the batter sit for about 10 minutes to allow it to rise and become bubbly.\n5. Preheat a large skillet or griddle over medium heat and lightly grease it with butter or oil.\n6. Pour about 1/4 cup of batter onto the skillet for each pancake. Cook until bubbles form on the surface, then flip and cook for another 2-3 minutes until golden brown.\n7. Repeat with the remaining batter, adjusting the heat as necessary.",
+      "prep-time-2": "10 minutes",
+      "cook-time": "15 minutes",
+      "image": {
+        "fileId": "67537d1c35f4646ffbb8aa35",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/67537d1c35f4646ffbb8aa35_Leonardo_Lightning_XL_Sourdough_Pancakes_0.jpeg",
+        "alt": null
+      },
+      "slug": "sourdough-pancakes-6d571",
+      "calories": 300
+    }
+  },
+  {
+    "id": "675496302356184360d5e30d",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:49:22.464Z",
+    "createdOn": "2024-12-07T18:38:40.910Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "82eb8e8c4eeb2d01e41c54c9b98a1a00",
+      "servings": 8,
+      "calories": 220,
+      "name": "Sourdough Sunrise Bagels",
+      "ingredients": "* 500g bread flour\n* 300g sourdough starter (active and bubbly)\n* 200ml warm water\n* 1 tablespoon salt\n* 1 tablespoon sugar\n* 1 tablespoon malt syrup (or honey)\n* 1 teaspoon freshly ground black pepper\n* 1 teaspoon onion powder\n* 1 teaspoon garlic powder\n* 2 tablespoons sesame seeds\n* 1 tablespoon poppy seeds\n* 1 egg (for egg wash)",
+      "instructions": "1. In a large mixing bowl, combine the bread flour, sourdough starter, warm water, salt, and sugar. Mix until a dough begins to form.\n2. Knead the dough on a clean surface for about 10 minutes until it becomes smooth and elastic.\n3. Place the dough in a lightly greased bowl, cover with a damp cloth, and let it rise for about 4-6 hours or until it has doubled in size.\n4. Once risen, punch down the dough and divide it into 8 equal pieces.\n5. Shape each piece into a ball and then poke a hole in the middle with your thumb. Carefully stretch the hole to about 2 inches wide to form a bagel shape.\n6. Place the shaped bagels on a baking sheet lined with parchment paper and cover them with a damp cloth. Let them rest for another 30-45 minutes.\n7. While the bagels are resting, preheat your oven to 220°C (430°F) and bring a large pot of water to a boil. Stir in the malt syrup.\n8. Once the water is bubbling, carefully drop in 2-3 bagels at a time and boil for 1-2 minutes on each side. Use a slotted spoon to remove them and transfer to a wire rack to drain.\n9. Brush each boiled bagel with an egg wash and sprinkle with sesame seeds, poppy seeds, black pepper, onion powder, and garlic powder as desired.\n10. Arrange the bagels on a baking sheet and bake them in the preheated oven for 20-25 minutes, or until they are golden brown.\n11. Remove from the oven and let cool on a wire rack before serving.",
+      "prep-time-2": "30 minutes",
+      "cook-time": "25 minutes",
+      "image": {
+        "fileId": "675496302356184360d5e2c6",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/675496302356184360d5e2c6_Leonardo_Lightning_XL_Sourdough_Sunrise_Bagels_0.jpeg",
+        "alt": null
+      },
+      "slug": "sourdough-sunrise-bagels"
+    }
+  },
+  {
+    "id": "6754979f78861bb177a5cf30",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:48:49.952Z",
+    "createdOn": "2024-12-07T18:44:47.993Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 10,
+      "calories": 280,
+      "name": "Sundried Tomato and Olive Sourdough Ciabatta",
+      "ingredients": "* 300g bread flour\n* 200g all-purpose flour\n* 100g sourdough starter\n* 350ml water\n* 10g salt\n* 100g sundried tomatoes, chopped\n* 100g black or green olives, pitted and sliced\n* 1 tsp sugar\n* 2 tbsp olive oil",
+      "instructions": "1. In a large mixing bowl, combine the bread flour, all-purpose flour, salt, and sugar.\n2. In a separate bowl, mix the sourdough starter with the water until well combined.\n3. Gradually add the wet mixture to the dry ingredients, stirring until a shaggy dough forms.\n4. Knead the dough on a lightly floured surface for about 10 minutes until smooth and elastic.\n5. Add the chopped sundried tomatoes and olives to the dough, and continue to knead until they are evenly distributed.\n6. Place the dough in a lightly oiled bowl, cover with a damp cloth, and let it rise at room temperature for about 4-6 hours, or until doubled in size.\n7. After the first rise, gently stretch and fold the dough in the bowl to strengthen the structure. Cover and let it rest for another hour.\n8. Line a baking tray with parchment paper. Gently transfer the dough onto the tray, being careful not to deflate it too much. Shape it into a rectangle about 1-inch thick.\n9. Cover the shaped dough with a damp cloth and let it rise for an additional 1-2 hours, until puffed.\n10. Preheat your oven to 220°C (425°F) and place a baking stone or an inverted baking tray inside to heat.\n11. Once the dough has risen, carefully transfer it onto the preheated baking stone or tray. Bake for 25-30 minutes or until the ciabatta has a golden-brown crust and sounds hollow when tapped on the bottom.\n12. Remove from the oven and let it cool on a wire rack before slicing.",
+      "prep-time-2": "30 minutes",
+      "cook-time": "30 minutes",
+      "image": {
+        "fileId": "6754979f78861bb177a5cf0c",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/6754979f78861bb177a5cf0c_Leonardo_Lightning_XL_Sundried_Tomato_and_Olive_Sourdough_Ciab_0.jpeg",
+        "alt": null
+      },
+      "slug": "sundried-tomato-and-olive-sourdough-ciabatta"
+    }
+  },
+  {
+    "id": "67571089b02f8225bd5c3976",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:48:28.788Z",
+    "createdOn": "2024-12-09T15:45:13.325Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 10,
+      "calories": 245,
+      "name": "Vanilla Almond Breakfast Loaf",
+      "ingredients": "* 2 cups all-purpose flour\n* 1 cup granulated sugar\n* 1/2 cup unsalted butter, softened\n* 1 cup milk\n* 2 large eggs\n* 1 tablespoon vanilla extract\n* 1 teaspoon almond extract\n* 1 teaspoon baking powder\n* 1/2 teaspoon baking soda\n* 1/4 teaspoon salt\n* 1/2 cup sliced almonds\n* 1/2 cup Greek yogurt (optional)\n* Powdered sugar for dusting (optional)",
+      "instructions": "1. Preheat your oven to 350°F (175°C). Grease a 9x5 inch loaf pan and set aside.\n2. In a large mixing bowl, cream together the softened butter and granulated sugar until light and fluffy.\n3. Add the eggs, milk, vanilla extract, and almond extract to the mixture and mix until well combined.\n4. In a separate bowl, whisk together the flour, baking powder, baking soda, and salt.\n5. Gradually add the dry ingredients to the wet mixture, stirring until just combined. Be careful not to overmix.\n6. Fold in the sliced almonds and Greek yogurt if using, ensuring they are evenly distributed throughout the batter.\n7. Pour the batter into the prepared loaf pan and smooth the top with a spatula.\n8. Bake in the preheated oven for 50-60 minutes, or until a toothpick inserted into the center comes out clean.\n9. Once baked, remove from the oven and allow the loaf to cool in the pan for about 10 minutes before transferring it to a wire rack to cool completely.\n10. Optional: Dust the cooled loaf with powdered sugar before serving.",
+      "prep-time-2": "15 minutes",
+      "cook-time": "60 minutes",
+      "image": {
+        "fileId": "67571088b02f8225bd5c37eb",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/67571088b02f8225bd5c37eb_Leonardo_Lightning_XL_Vanilla_Almond_Breakfast_Loaf_0.jpeg",
+        "alt": null
+      },
+      "slug": "vanilla-almond-breakfast-loaf"
+    }
+  },
+  {
+    "id": "675710ccd2cb9a598e35bf02",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-09T17:19:54.676Z",
+    "lastUpdated": "2024-12-09T16:47:38.773Z",
+    "createdOn": "2024-12-09T15:46:20.943Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "ef726443556502e66e360cc5ac91d306",
+      "servings": 10,
+      "calories": 220,
+      "name": "Zesty Lemon Thyme Bread",
+      "ingredients": "* 3 cups all-purpose flour\n* 1 tablespoon baking powder\n* 1 teaspoon salt\n* 1/2 teaspoon baking soda\n* 1/4 cup granulated sugar\n* 1/4 cup olive oil\n* 1 cup buttermilk\n* 1/4 cup fresh lemon juice\n* 1 tablespoon lemon zest\n* 1 tablespoon fresh thyme leaves, chopped\n* 2 large eggs\n* Optional: additional thyme sprigs for garnish",
+      "instructions": "1. Preheat the oven to 350°F (175°C). Grease a 9x5 inch loaf pan or line with parchment paper.\n2. In a large bowl, whisk together the flour, baking powder, salt, baking soda, and sugar until evenly combined.\n3. In another bowl, mix the olive oil, buttermilk, lemon juice, lemon zest, and thyme leaves until well combined.\n4. In a separate bowl, beat the eggs, then combine them with the wet mixture.\n5. Pour the wet ingredients into the dry ingredients and gently fold until just combined. Be careful not to overmix; a few lumps are okay.\n6. Pour the batter into the prepared loaf pan. Smooth the top with a spatula.\n7. Bake in the preheated oven for 50-60 minutes, or until a toothpick inserted into the center comes out clean.\n8. Remove from oven and let it cool in the pan for 10 minutes before transferring to a wire rack to cool completely.",
+      "prep-time-2": "15 minutes",
+      "cook-time": "60 minutes",
+      "image": {
+        "fileId": "675710ccd2cb9a598e35beb3",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/675710ccd2cb9a598e35beb3_Leonardo_Lightning_XL_Zesty_Lemon_Thyme_Bread_0.jpeg",
+        "alt": null
+      },
+      "slug": "zesty-lemon-thyme-bread"
+    }
+  },
+  {
+    "id": "675497b2ecaf55e5c700f655",
+    "cmsLocaleId": "675334306884ac29276a1bb4",
+    "lastPublished": "2024-12-07T18:45:06.816Z",
+    "lastUpdated": "2024-12-07T18:45:06.816Z",
+    "createdOn": "2024-12-07T18:45:06.816Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "category": "82eb8e8c4eeb2d01e41c54c9b98a1a00",
+      "servings": 4,
+      "calories": 300,
+      "name": "Zesty Lemon-Honey Sourdough Pancakes",
+      "ingredients": "* 1 cup sourdough starter (active and bubbly)\n* 1 cup all-purpose flour\n* 1 cup milk\n* 2 large eggs\n* 2 tablespoons honey\n* 1 tablespoon lemon zest (from about 1 lemon)\n* 2 tablespoons lemon juice (freshly squeezed)\n* 1 teaspoon baking soda\n* 1/2 teaspoon baking powder\n* 1/4 teaspoon salt\n* Butter or oil for cooking",
+      "instructions": "1. In a large mixing bowl, combine the sourdough starter, flour, and milk. Mix until well combined and let it sit for 30 minutes to 1 hour to allow the mixture to ferment slightly.\n2. After resting, add the eggs, honey, lemon zest, lemon juice, baking soda, baking powder, and salt to the mixture. Stir gently until just combined; do not overmix.\n3. Heat a non-stick skillet or griddle over medium heat and add a little butter or oil.\n4. Pour about 1/4 cup of batter for each pancake onto the skillet. Cook until bubbles form on the surface of the pancakes, about 2-3 minutes, then flip and cook for another 1-2 minutes until golden brown.\n5. Remove pancakes from the skillet and keep warm. Repeat with the remaining batter, adding butter or oil as necessary.",
+      "prep-time-2": "1 hour",
+      "cook-time": "20 minutes",
+      "image": {
+        "fileId": "675497b2ecaf55e5c700f5f8",
+        "url": "https://cdn.prod.website-files.com/675334306884ac29276a1bb5/675497b2ecaf55e5c700f5f8_Leonardo_Lightning_XL_Zesty_LemonHoney_Sourdough_Pancakes_0.jpeg",
+        "alt": null
+      },
+      "slug": "zesty-lemon-honey-sourdough-pancakes"
+    }
+  }
+]

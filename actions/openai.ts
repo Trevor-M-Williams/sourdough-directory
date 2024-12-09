@@ -5,12 +5,12 @@ import { zodResponseFormat } from "openai/helpers/zod";
 import { z } from "zod";
 import { createWebflowItem } from "./webflow";
 import { generateImage } from "./leonardo";
-import { Category } from "@/types";
+import { RecipeCategory } from "@/types";
 const openai = new OpenAI();
 
 const RecipeSchema = z.object({
   name: z.string(),
-  category: z.nativeEnum(Category),
+  category: z.nativeEnum(RecipeCategory),
   ingredients: z.array(z.string()),
   instructions: z.array(z.string()),
   prepTime: z.string(),
@@ -73,7 +73,7 @@ export async function generateRecipe(recipeName: string) {
   };
 }
 
-export async function generateRecipeIdeas(category: Category) {
+export async function generateRecipeIdeas(category: RecipeCategory) {
   console.log("Generating recipe ideas for category:", category);
 
   const completion = await openai.beta.chat.completions.parse({

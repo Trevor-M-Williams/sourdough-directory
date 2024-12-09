@@ -3,6 +3,14 @@ const nextConfig = {
   async headers() {
     return [
       {
+        images: {
+          remotePatterns: [
+            {
+              protocol: "https",
+              hostname: "cdn.prod.website-files.com",
+            },
+          ],
+        },
         source: "/api/(.*)",
         headers: [
           {
