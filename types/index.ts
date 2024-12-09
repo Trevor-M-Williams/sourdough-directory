@@ -1,6 +1,5 @@
 export enum Category {
-  BasicLoaves = "Basic Loaves",
-  FlavoredAndSpecialityLoaves = "Flavored and Specialty Loaves",
+  Bread = "Bread",
   CookingAndBaking = "Cooking and Baking",
   International = "International",
 }

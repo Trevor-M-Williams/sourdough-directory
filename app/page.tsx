@@ -20,7 +20,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 export default function Home() {
   const [recipeName, setRecipeName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category>(
-    Category.BasicLoaves
+    Category.Bread
   );
   const [recipeIdeas, setRecipeIdeas] = useState<string[]>([]);
   const [isGeneratingIdeas, setIsGeneratingIdeas] = useState(false);
@@ -197,12 +197,7 @@ function FormMultiple({
     }
   };
 
-  const categoryOptions = [
-    "Basic Loaves",
-    "Flavored and Specialty Loaves",
-    "Cooking and Baking",
-    "International",
-  ];
+  const categoryOptions = ["Bread", "Cooking and Baking", "International"];
 
   return (
     <div className="pt-8">
