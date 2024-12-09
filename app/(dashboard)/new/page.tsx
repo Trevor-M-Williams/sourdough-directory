@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { generateRecipe, generateRecipeIdeas } from "@/actions/openai";
-import { Category } from "@/types";
+import { RecipeCategory } from "@/types";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { BookText, Lightbulb } from "lucide-react";
@@ -19,8 +19,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 export default function Home() {
   const [recipeName, setRecipeName] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<Category>(
-    Category.Bread
+  const [selectedCategory, setSelectedCategory] = useState<RecipeCategory>(
+    RecipeCategory.Bread
   );
   const [recipeIdeas, setRecipeIdeas] = useState<string[]>([]);
   const [isGeneratingIdeas, setIsGeneratingIdeas] = useState(false);
@@ -162,11 +162,11 @@ function FormMultiple({
   setRecipeIdeas,
   handleGenerateIdeas,
 }: {
-  selectedCategory: Category;
+  selectedCategory: RecipeCategory;
   isGeneratingIdeas: boolean;
   recipeIdeas: string[];
   setSelectedForm: (form: "single" | "multiple" | null) => void;
-  setSelectedCategory: (category: Category) => void;
+  setSelectedCategory: (category: RecipeCategory) => void;
   setRecipeIdeas: (recipeIdeas: string[]) => void;
   handleGenerateIdeas: () => void;
 }) {
@@ -209,7 +209,9 @@ function FormMultiple({
             <Label htmlFor="category">Category</Label>
             <Select
               value={selectedCategory}
-              onValueChange={(value) => setSelectedCategory(value as Category)}
+              onValueChange={(value) =>
+                setSelectedCategory(value as RecipeCategory)
+              }
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select a category" />
