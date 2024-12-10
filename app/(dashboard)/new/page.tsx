@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 
+export const maxDuration = 300;
+
 export default function Home() {
   const [recipeName, setRecipeName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<RecipeCategory>(
