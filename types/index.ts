@@ -48,6 +48,6 @@ export interface RecipeWithIdAndCreatedOn extends Recipe {
 
 export enum RecipeCategory {
   Bread = "Bread",
-  CookingAndBaking = "Cooking & Baking",
+  CookingAndBaking = "Cooking and Baking",
   International = "International",
 }
