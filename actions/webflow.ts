@@ -1,11 +1,39 @@
 "use server";
 
-import { Recipe } from "@/types";
+import { Recipe, RecipeWithIdAndCreatedOn } from "@/types";
 import { WebflowClient } from "webflow-api";
 
 const client = new WebflowClient({
   accessToken: process.env.WEBFLOW_API_KEY!,
 });
+
+export async function getRecipeById(id: string) {
+  const recipeData = await client.collections.items.getItemLive(
+    process.env.WEBFLOW_COLLECTION_ID!,
+    id
+  );
+
+  if (!recipeData.fieldData) {
+    return null;
+  }
+
+  const recipe: RecipeWithIdAndCreatedOn = {
+    id: recipeData.id || "",
+    createdOn: recipeData.createdOn || "",
+    name: recipeData.fieldData.name || "",
+    slug: recipeData.fieldData.slug || "",
+    category: recipeData.fieldData.category || "",
+    ingredients: recipeData.fieldData.ingredients || "",
+    instructions: recipeData.fieldData.instructions || "",
+    prepTime: recipeData.fieldData["prep-time-2"] || "",
+    cookTime: recipeData.fieldData["cook-time"] || "",
+    servings: recipeData.fieldData.servings || 0,
+    calories: recipeData.fieldData.calories || 0,
+    imageUrl: recipeData.fieldData.image.url || "",
+  };
+
+  return recipe;
+}
 
 export async function createWebflowItem(recipe: Recipe) {
   try {

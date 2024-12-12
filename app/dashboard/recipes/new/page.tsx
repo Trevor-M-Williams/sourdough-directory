@@ -19,7 +19,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 export const maxDuration = 300;
 
-export default function Home() {
+export default function NewRecipePage() {
   const [recipeName, setRecipeName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<RecipeCategory>(
     RecipeCategory.Bread

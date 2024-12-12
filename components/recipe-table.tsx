@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -14,7 +13,7 @@ import {
 import { ArrowUpDown } from "lucide-react";
 import { RecipeWithIdAndCreatedOn } from "@/types";
 
-type SortKey = "name" | "createdOn";
+type SortKey = "name" | "createdOn" | "category";
 type SortOrder = "asc" | "desc";
 
 export default function RecipeTable({
@@ -22,8 +21,9 @@ export default function RecipeTable({
 }: {
   recipes: RecipeWithIdAndCreatedOn[];
 }) {
-  const [sortKey, setSortKey] = useState<SortKey>("name");
-  const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
+  const router = useRouter();
+  const [sortKey, setSortKey] = useState<SortKey>("createdOn");
+  const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
 
   const sortedRecipes = [...recipes].sort((a, b) => {
     if (a[sortKey] < b[sortKey]) return sortOrder === "asc" ? -1 : 1;
@@ -40,19 +40,30 @@ export default function RecipeTable({
     }
   };
 
+  const handleRowClick = (recipeId: string) => {
+    router.push(`/dashboard/recipe/${recipeId}`);
+  };
+
   return (
-    <div className="max-w-5xl mx-auto py-10">
+    <div className="w-full max-w-5xl mx-auto">
       <Table>
-        <TableCaption>A list of delicious recipes</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-28"></TableHead>
             <TableHead>
               <div
                 className="flex items-center cursor-pointer"
                 onClick={() => toggleSort("name")}
               >
                 Name
+                <ArrowUpDown className="ml-2 h-4 w-4" />
+              </div>
+            </TableHead>
+            <TableHead>
+              <div
+                className="flex items-center cursor-pointer"
+                onClick={() => toggleSort("category")}
+              >
+                Category
                 <ArrowUpDown className="ml-2 h-4 w-4" />
               </div>
             </TableHead>
@@ -69,19 +80,13 @@ export default function RecipeTable({
         </TableHeader>
         <TableBody>
           {sortedRecipes.map((recipe) => (
-            <TableRow key={recipe.id} className="text-lg hover:bg-gray-100">
-              <TableCell>
-                <Image
-                  src={recipe.imageUrl}
-                  alt={recipe.name}
-                  height={80}
-                  width={80}
-                  className="rounded-sm object-cover"
-                />
-              </TableCell>
-              <TableCell className="font-medium text-xl">
-                {recipe.name}
-              </TableCell>
+            <TableRow
+              key={recipe.id}
+              className="text-base hover:bg-gray-100 cursor-pointer"
+              onClick={() => handleRowClick(recipe.id)}
+            >
+              <TableCell className="font-medium">{recipe.name}</TableCell>
+              <TableCell>{recipe.category}</TableCell>
               <TableCell className="text-right">
                 {recipe.createdOn.split("T")[0]}
               </TableCell>
