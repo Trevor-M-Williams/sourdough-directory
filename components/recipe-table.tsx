@@ -41,7 +41,7 @@ export default function RecipeTable({
   };
 
   const handleRowClick = (recipeId: string) => {
-    router.push(`/dashboard/recipe/${recipeId}`);
+    router.push(`/dashboard/recipes/${recipeId}`);
   };
 
   return (
@@ -86,7 +86,8 @@ export default function RecipeTable({
               onClick={() => handleRowClick(recipe.id)}
             >
               <TableCell className="font-medium">{recipe.name}</TableCell>
-              <TableCell>{recipe.category}</TableCell>
+              {/* <TableCell>{recipe.category}</TableCell> */}
+              <TableCell>Bread?</TableCell>
               <TableCell className="text-right">
                 {recipe.createdOn.split("T")[0]}
               </TableCell>

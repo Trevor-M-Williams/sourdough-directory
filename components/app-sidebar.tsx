@@ -20,12 +20,12 @@ const data = {
       items: [
         {
           title: "All Recipes",
-          url: "/dashboard",
+          url: "/dashboard/recipes",
           isActive: true,
         },
         {
           title: "New Recipe",
-          url: "/dashboard/new",
+          url: "/dashboard/recipes/new",
         },
       ],
     },

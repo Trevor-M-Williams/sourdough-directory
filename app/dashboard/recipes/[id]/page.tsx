@@ -36,7 +36,7 @@ export default async function RecipePage({ params }: PageProps) {
               <p>{new Date(recipe.createdOn).toLocaleDateString()}</p>
               <p>•</p>
               {/* <p>{recipe.category}</p> */}
-              <p>Bread (maybe)</p>
+              <p>Bread?</p>
             </div>
           </div>
           <div className="grid gap-6">
