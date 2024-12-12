@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { Header } from "@/components/header";
