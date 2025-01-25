@@ -6,6 +6,7 @@ import { RecipeCategory } from "@/types";
 
 export const runtime = "edge";
 export const dynamic = "force-dynamic";
+export const maxDuration = 300;
 
 const categories = Object.values(RecipeCategory);
 
