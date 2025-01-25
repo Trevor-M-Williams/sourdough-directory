@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
 import { db } from "@/db";
 import { recipes } from "@/db/schema";
-import { eq } from "drizzle-orm";
 import { RecipeCategory } from "@/types";
-import { Recipe, RecipeWithIdAndCreatedOn } from "@/types";
+import { Recipe } from "@/types";
 import { WebflowClient } from "webflow-api";
 import OpenAI from "openai";
 import { zodResponseFormat } from "openai/helpers/zod";
