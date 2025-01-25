@@ -1,11 +1,13 @@
 import { generateRecipe } from "@/actions/openai";
 import { NextResponse } from "next/server";
 import { db } from "@/db";
+import { recipes } from "@/db/schema";
+import { RecipeCategory } from "@/types";
 
 export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
-const categories = ["Bread", "Cooking and Baking", "International"];
+const categories = Object.values(RecipeCategory);
 
 export async function GET() {
   try {
@@ -19,13 +21,33 @@ export async function GET() {
 
     const prompt = `Generate a unique ${randomCategory} recipe. Here are the existing recipes to avoid duplicates: ${existingNames.join(", ")}.`;
 
-    const result = await generateRecipe(prompt);
+    const { success, recipe, id } = await generateRecipe(prompt);
 
-    if (!result.success) {
-      throw new Error(result.message);
+    if (!success || !recipe || !id) {
+      throw new Error("Failed to generate recipe");
     }
 
-    return NextResponse.json({ success: true, message: result.message });
+    await db.insert(recipes).values({
+      id: crypto.randomUUID(),
+      webflowId: id,
+      name: recipe.name,
+      slug: recipe.name.toLowerCase().replace(/\s+/g, "-"),
+      category: randomCategory,
+      ingredients: recipe.ingredients,
+      instructions: recipe.instructions,
+      prepTime: recipe.prepTime,
+      cookTime: recipe.cookTime,
+      servings: recipe.servings,
+      calories: recipe.calories,
+      imageUrl: recipe.imageUrl,
+      createdOn: new Date(),
+      lastUpdated: new Date(),
+    });
+
+    return NextResponse.json({
+      success: true,
+      message: "Recipe generated and saved",
+    });
   } catch (error) {
     console.error("Error generating recipe:", error);
     return NextResponse.json(

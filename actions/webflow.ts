@@ -41,7 +41,7 @@ export async function getRecipeById(id: string) {
 
 export async function createWebflowItem(recipe: Recipe) {
   try {
-    await client.collections.items.createItemLive(
+    const response = await client.collections.items.createItemLive(
       process.env.WEBFLOW_COLLECTION_ID!,
       {
         isArchived: false,
@@ -61,7 +61,7 @@ export async function createWebflowItem(recipe: Recipe) {
       }
     );
 
-    return { success: true };
+    return { success: true, id: response.id };
   } catch (error) {
     console.error("Error creating Webflow item:", error);
     return { success: false, error };

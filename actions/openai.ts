@@ -17,6 +17,7 @@ const RecipeSchema = z.object({
   cookTime: z.string(),
   servings: z.number(),
   calories: z.number(),
+  imageUrl: z.string().optional(),
 });
 
 const RecipeIdeasSchema = z.object({
@@ -26,51 +27,57 @@ const RecipeIdeasSchema = z.object({
 export async function generateRecipe(recipeName: string) {
   console.log("Generating recipe for:", recipeName);
 
-  // Run recipe and image generation in parallel
-  const [recipeCompletion, imageResponse] = await Promise.all([
-    openai.beta.chat.completions.parse({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content:
-            "Generate a detailed recipe with the provided schema format. Include the estimated calories per serving.",
-        },
-        {
-          role: "user",
-          content: `Generate a recipe for ${recipeName}`,
-        },
-      ],
-      response_format: zodResponseFormat(RecipeSchema, "recipe"),
-    }),
-    generateImage(recipeName),
-  ]);
+  try {
+    // Run recipe and image generation in parallel
+    const [recipeCompletion, imageResponse] = await Promise.all([
+      openai.beta.chat.completions.parse({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system",
+            content:
+              "Generate a detailed recipe with the provided schema format. Include the estimated calories per serving.",
+          },
+          {
+            role: "user",
+            content: `Generate a recipe for ${recipeName}`,
+          },
+        ],
+        response_format: zodResponseFormat(RecipeSchema, "recipe"),
+      }),
+      generateImage(recipeName),
+    ]);
 
-  const recipe = recipeCompletion.choices[0].message.parsed;
-  if (!recipe) throw new Error("Failed to generate recipe");
-  const formattedRecipe = formatRecipe(recipe);
+    const recipe = recipeCompletion.choices[0].message.parsed;
+    if (!recipe) throw new Error("Failed to generate recipe");
+    const formattedRecipe = formatRecipe(recipe, imageResponse);
 
-  const webflowResponse = await createWebflowItem({
-    name: formattedRecipe.name,
-    slug: formattedRecipe.name.toLowerCase().replace(/\s+/g, "-"),
-    category: formattedRecipe.category,
-    ingredients: formattedRecipe.ingredients,
-    instructions: formattedRecipe.instructions,
-    prepTime: formattedRecipe.prepTime,
-    cookTime: formattedRecipe.cookTime,
-    servings: formattedRecipe.servings,
-    calories: formattedRecipe.calories,
-    imageUrl: imageResponse,
-  });
+    const { success, id } = await createWebflowItem({
+      name: formattedRecipe.name,
+      slug: formattedRecipe.name.toLowerCase().replace(/\s+/g, "-"),
+      category: formattedRecipe.category,
+      ingredients: formattedRecipe.ingredients,
+      instructions: formattedRecipe.instructions,
+      prepTime: formattedRecipe.prepTime,
+      cookTime: formattedRecipe.cookTime,
+      servings: formattedRecipe.servings,
+      calories: formattedRecipe.calories,
+      imageUrl: formattedRecipe.imageUrl,
+    });
 
-  if (!webflowResponse.success) {
-    throw new Error("Failed to create Webflow item");
+    if (!success) {
+      throw new Error("Failed to create Webflow item");
+    }
+
+    return {
+      success: true,
+      id,
+      recipe: formattedRecipe,
+    };
+  } catch (error) {
+    console.error("Error generating recipe:", error);
+    return { success: false, message: "Failed to generate recipe" };
   }
-
-  return {
-    success: true,
-    message: `Recipe for ${recipe.name} created successfully`,
-  };
 }
 
 export async function generateRecipeIdeas(category: RecipeCategory) {
@@ -101,7 +108,7 @@ export async function generateRecipeIdeas(category: RecipeCategory) {
   };
 }
 
-function formatRecipe(recipe: z.infer<typeof RecipeSchema>) {
+function formatRecipe(recipe: z.infer<typeof RecipeSchema>, imageUrl: string) {
   const ingredientsList = recipe.ingredients
     .map((ingredient) => `* ${ingredient}`)
     .join("\n");
@@ -114,5 +121,6 @@ function formatRecipe(recipe: z.infer<typeof RecipeSchema>) {
     ...recipe,
     ingredients: ingredientsList,
     instructions: instructionsList,
+    imageUrl,
   };
 }
