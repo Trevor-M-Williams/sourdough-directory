@@ -43,7 +43,9 @@ export interface Recipe {
 
 export interface RecipeWithIdAndCreatedOn extends Recipe {
   id: string;
-  createdOn: string;
+  webflowId: string;
+  createdOn: Date;
+  lastUpdated: Date;
 }
 
 export enum RecipeCategory {

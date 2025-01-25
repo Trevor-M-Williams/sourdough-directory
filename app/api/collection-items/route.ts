@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { WebflowClient } from "webflow-api";
 
 const client = new WebflowClient({
@@ -18,12 +18,16 @@ export async function OPTIONS() {
   return NextResponse.json({}, options);
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const limit = searchParams.get("limit");
+  const offset = searchParams.get("offset");
   try {
     const data = await client.collections.items.listItemsLive(
       process.env.WEBFLOW_COLLECTION_ID!,
       {
-        limit: 100,
+        limit: limit ? parseInt(limit) : 10,
+        offset: offset ? parseInt(offset) : 0,
         sortBy: "name",
         sortOrder: "asc",
       }

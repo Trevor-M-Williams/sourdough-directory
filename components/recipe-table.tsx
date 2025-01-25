@@ -86,10 +86,11 @@ export default function RecipeTable({
               onClick={() => handleRowClick(recipe.id)}
             >
               <TableCell className="font-medium">{recipe.name}</TableCell>
-              {/* <TableCell>{recipe.category}</TableCell> */}
-              <TableCell>Bread?</TableCell>
+              <TableCell>{recipe.category}</TableCell>
               <TableCell className="text-right">
-                {recipe.createdOn.split("T")[0]}
+                {recipe.createdOn instanceof Date
+                  ? recipe.createdOn.toLocaleDateString()
+                  : new Date(recipe.createdOn).toLocaleDateString()}
               </TableCell>
             </TableRow>
           ))}
