@@ -4,6 +4,9 @@ import { db } from "@/db";
 import { recipes } from "@/db/schema";
 import { RecipeCategory } from "@/types";
 
+import OpenAI from "openai";
+const openai = new OpenAI();
+
 export const runtime = "edge";
 export const dynamic = "force-dynamic";
 export const maxDuration = 300;
@@ -20,9 +23,24 @@ export async function GET() {
     });
     const existingNames = existingRecipes.map((r) => r.name);
 
-    const prompt = `Generate a unique ${randomCategory} recipe. Here are the existing recipes to avoid duplicates: ${existingNames.join(", ")}.`;
+    const prompt = `
+        Generate a unique recipe ${randomCategory} sourdough recipe.
+        Here are the existing recipes to avoid duplicates: ${existingNames.join(", ")}.
+        Return only the name of the recipe.
+    `;
 
-    const { success, recipe, id } = await generateRecipe(prompt);
+    const result = await openai.beta.chat.completions.parse({
+      model: "gpt-4o-mini",
+      messages: [{ role: "user", content: prompt }],
+    });
+
+    const recipeName = result.choices[0].message.content;
+
+    if (!recipeName) {
+      throw new Error("Failed to generate recipe name");
+    }
+
+    const { success, recipe, id } = await generateRecipe(recipeName);
 
     if (!success || !recipe || !id) {
       throw new Error("Failed to generate recipe");
