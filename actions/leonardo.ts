@@ -36,7 +36,7 @@ export async function generateImage(prompt: string) {
     method: "GET",
     headers: {
       accept: "application/json",
-      authorization: "Bearer fd06aa94-ae3a-4b5e-8b98-328e723c75a4",
+      authorization: `Bearer ${process.env.LEONARDO_API_KEY}`,
     },
   };
   let attempts = 0;

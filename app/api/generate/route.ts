@@ -197,62 +197,85 @@ function formatRecipe(recipe: z.infer<typeof RecipeSchema>, imageUrl: string) {
 }
 
 async function generateImage(prompt: string) {
-  console.log("Generating image");
+  console.log("Generating image for:", prompt);
 
-  const postUrl = "https://cloud.leonardo.ai/api/rest/v1/generations";
-  const postOptions = {
-    method: "POST",
-    headers: {
-      accept: "application/json",
-      "content-type": "application/json",
-      authorization: `Bearer ${process.env.LEONARDO_API_KEY}`,
-    },
-    body: JSON.stringify({
-      alchemy: true,
-      width: 1024,
-      height: 768,
-      modelId: "b24e16ff-06e3-43eb-8d33-4416c2d75876",
-      num_images: 1,
-      presetStyle: "DYNAMIC",
-      prompt,
-    }),
-  };
+  try {
+    const postUrl = "https://cloud.leonardo.ai/api/rest/v1/generations";
+    const postOptions = {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        authorization: `Bearer ${process.env.LEONARDO_API_KEY}`,
+      },
+      body: JSON.stringify({
+        alchemy: true,
+        width: 1024,
+        height: 768,
+        modelId: "b24e16ff-06e3-43eb-8d33-4416c2d75876",
+        num_images: 1,
+        presetStyle: "DYNAMIC",
+        prompt,
+      }),
+    };
 
-  const postResponse = await fetch(postUrl, postOptions);
+    const postResponse = await fetch(postUrl, postOptions);
 
-  if (!postResponse.ok) {
-    throw new Error(`Failed to generate image: ${postResponse.statusText}`);
-  }
-
-  const postData = await postResponse.json();
-  const generationId = postData.sdGenerationJob.generationId;
-
-  const getUrl = `https://cloud.leonardo.ai/api/rest/v1/generations/${generationId}`;
-  const getOptions = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      authorization: "Bearer fd06aa94-ae3a-4b5e-8b98-328e723c75a4",
-    },
-  };
-  let attempts = 0;
-  let imageData;
-  const delay = 5000;
-
-  while (attempts < 10) {
-    const getResponse = await fetch(getUrl, getOptions);
-    imageData = await getResponse.json();
-
-    const generatedImages = imageData.generations_by_pk.generated_images;
-
-    if (generatedImages && generatedImages[0] && generatedImages[0].url) {
-      console.log("Image generation complete");
-      break;
+    if (!postResponse.ok) {
+      throw new Error(
+        `Failed to initiate image generation: ${postResponse.statusText}`
+      );
     }
 
-    attempts++;
-    await new Promise((resolve) => setTimeout(resolve, delay));
-  }
+    const postData = await postResponse.json();
 
-  return imageData.generations_by_pk.generated_images[0].url;
+    if (!postData?.sdGenerationJob?.generationId) {
+      throw new Error("Failed to get generation ID from Leonardo AI");
+    }
+
+    const generationId = postData.sdGenerationJob.generationId;
+
+    const getUrl = `https://cloud.leonardo.ai/api/rest/v1/generations/${generationId}`;
+    const getOptions = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        authorization: `Bearer ${process.env.LEONARDO_API_KEY}`,
+      },
+    };
+
+    let attempts = 0;
+    const maxAttempts = 12;
+    const delay = 5000;
+
+    while (attempts < maxAttempts) {
+      const getResponse = await fetch(getUrl, getOptions);
+
+      if (!getResponse.ok) {
+        throw new Error(
+          `Failed to check image generation status: ${getResponse.statusText}`
+        );
+      }
+
+      const imageData = await getResponse.json();
+      const generatedImages = imageData?.generations_by_pk?.generated_images;
+
+      if (generatedImages?.[0]?.url) {
+        console.log("Image generation complete");
+        return generatedImages[0].url;
+      }
+
+      attempts++;
+      console.log(
+        `Waiting for image generation, attempt ${attempts}/${maxAttempts}`
+      );
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
+
+    throw new Error("Image generation timed out");
+  } catch (error) {
+    console.error("Error in image generation:", error);
+    // Return a default image URL or throw an error depending on your requirements
+    return "https://placehold.co/1024x768/png?text=Image+Generation+Failed";
+  }
 }
