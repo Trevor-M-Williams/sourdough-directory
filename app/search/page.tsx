@@ -33,6 +33,7 @@ export default function SearchPage() {
     <main className="h-screen w-full flex flex-col p-8 pb-2">
       <div className="w-full mb-2">
         <Input
+          autoFocus
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search for a recipe"
