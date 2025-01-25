@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { searchRecipes } from "@/actions/webflow";
 import { RecipeWithIdAndCreatedOn } from "@/types";
 import { Input } from "@/components/ui/input";
