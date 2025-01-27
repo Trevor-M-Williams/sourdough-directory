@@ -269,8 +269,6 @@ async function generateImage(prompt: string) {
 
       imageData = await getResponse.json();
 
-      console.log("Image data:", imageData);
-
       const generatedImages = imageData?.generations_by_pk?.generated_images;
 
       if (generatedImages?.[0]?.url) {
