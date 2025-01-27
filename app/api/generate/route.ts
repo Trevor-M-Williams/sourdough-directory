@@ -138,10 +138,10 @@ async function createWebflowItem(recipe: Recipe) {
       }
     );
 
-    return { success: true, id: response.id };
+    return response;
   } catch (error) {
     console.error("Error creating Webflow item:", error);
-    return { success: false, error };
+    throw error;
   }
 }
 
@@ -173,7 +173,7 @@ async function generateRecipe(recipeName: string) {
     if (!recipe) throw new Error("Failed to generate recipe");
     const formattedRecipe = formatRecipe(recipe, imageResponse);
 
-    const { success, id } = await createWebflowItem({
+    const webflowResponse = await createWebflowItem({
       name: formattedRecipe.name,
       slug: formattedRecipe.name.toLowerCase().replace(/\s+/g, "-"),
       category: formattedRecipe.category,
@@ -186,12 +186,14 @@ async function generateRecipe(recipeName: string) {
       imageUrl: formattedRecipe.imageUrl,
     });
 
-    if (!success) {
+    if (!webflowResponse) {
       throw new Error("Failed to create Webflow item");
     }
 
+    formattedRecipe.imageUrl = webflowResponse?.fieldData?.image;
+
     return {
-      id,
+      id: webflowResponse.id,
       recipe: formattedRecipe,
     };
   } catch (error) {
