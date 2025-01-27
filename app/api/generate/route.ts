@@ -95,32 +95,62 @@ export async function GET() {
 }
 
 async function createWebflowItem(recipe: Recipe) {
-  try {
-    const response = await client.collections.items.createItemLive(
-      process.env.WEBFLOW_COLLECTION_ID!,
-      {
-        isArchived: false,
-        isDraft: false,
-        fieldData: {
-          name: recipe.name,
-          slug: recipe.slug,
-          category: recipe.category,
-          ingredients: recipe.ingredients,
-          instructions: recipe.instructions,
-          "prep-time-2": recipe.prepTime,
-          "cook-time": recipe.cookTime,
-          servings: recipe.servings,
-          calories: recipe.calories,
-          image: recipe.imageUrl,
-        },
-      }
-    );
+  const maxRetries = 3;
+  const retryDelay = 5000; // 5 seconds
 
-    return { success: true, id: response.id };
-  } catch (error) {
-    console.error("Error creating Webflow item:", error);
-    return { success: false, error };
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      // Normalize the string to decompose the special characters, then remove diacritics and non-alphanumeric chars
+      const normalizedSlug = recipe.name
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-") // Replace non-alphanumeric chars with hyphens
+        .replace(/^-+|-+$/g, ""); // Remove leading/trailing hyphens
+
+      const response = await client.collections.items.createItemLive(
+        process.env.WEBFLOW_COLLECTION_ID!,
+        {
+          isArchived: false,
+          isDraft: false,
+          fieldData: {
+            name: recipe.name,
+            slug: normalizedSlug,
+            category: recipe.category,
+            ingredients: recipe.ingredients,
+            instructions: recipe.instructions,
+            "prep-time-2": recipe.prepTime,
+            "cook-time": recipe.cookTime,
+            servings: recipe.servings,
+            calories: recipe.calories,
+            image: recipe.imageUrl,
+          },
+        }
+      );
+
+      return { success: true, id: response.id };
+    } catch (error: any) {
+      console.error(
+        `Error creating Webflow item (attempt ${attempt}/${maxRetries}):`,
+        error
+      );
+
+      // If it's a 409 conflict error and we haven't exhausted retries, wait and try again
+      if (error?.status === 409 && attempt < maxRetries) {
+        console.log(`Retrying in ${retryDelay / 1000} seconds...`);
+        await new Promise((resolve) => setTimeout(resolve, retryDelay));
+        continue;
+      }
+
+      // If we've exhausted retries or it's a different error, return failure
+      return { success: false, error };
+    }
   }
+
+  return {
+    success: false,
+    error: new Error("Max retries exceeded for creating Webflow item"),
+  };
 }
 
 async function generateRecipe(recipeName: string) {
@@ -242,10 +272,12 @@ async function generateImage(prompt: string) {
         accept: "application/json",
         authorization: `Bearer ${process.env.LEONARDO_API_KEY}`,
       },
+      cache: "no-store" as RequestCache,
     };
 
     let attempts = 0;
-    const maxAttempts = 36;
+    let imageData;
+    const maxAttempts = 12;
     const delay = 5000;
 
     while (attempts < maxAttempts) {
@@ -257,7 +289,10 @@ async function generateImage(prompt: string) {
         );
       }
 
-      const imageData = await getResponse.json();
+      imageData = await getResponse.json();
+
+      console.log("Image data:", imageData);
+
       const generatedImages = imageData?.generations_by_pk?.generated_images;
 
       if (generatedImages?.[0]?.url) {
@@ -275,7 +310,6 @@ async function generateImage(prompt: string) {
     throw new Error("Image generation timed out");
   } catch (error) {
     console.error("Error in image generation:", error);
-    // Return a default image URL or throw an error depending on your requirements
-    return "https://placehold.co/1024x768/png?text=Image+Generation+Failed";
+    throw error;
   }
 }

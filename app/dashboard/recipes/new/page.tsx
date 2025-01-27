@@ -31,14 +31,16 @@ export default function NewRecipePage() {
   >(null);
 
   const handleGenerateRecipe = async () => {
+    console.log("Generating recipe");
     try {
-      if (!recipeName.trim()) return;
+      const response = await fetch("/api/generate");
 
-      const { success, message } = await generateRecipe(recipeName);
-      if (!success) {
-        throw new Error(message);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch recipe: ${response.statusText}`);
       }
-      console.log(message);
+
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
       console.error("Error generating recipe:", error);
     }
@@ -141,15 +143,6 @@ function FormSingle({
   return (
     <div className="pt-8 space-y-4">
       <h2 className="text-lg font-semibold">Generate Single Recipe</h2>
-      <div className="space-y-2">
-        <Label htmlFor="recipe-name">Recipe Name</Label>
-        <Input
-          id="recipe-name"
-          value={recipeName}
-          onChange={(e) => setRecipeName(e.target.value)}
-          placeholder="Enter recipe name"
-        />
-      </div>
       <Button onClick={handleGenerateRecipe}>Generate Recipe</Button>
     </div>
   );
