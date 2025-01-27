@@ -17,8 +17,6 @@ const openai = new OpenAI();
 export const dynamic = "force-dynamic";
 export const maxDuration = 300;
 
-const categories = Object.values(RecipeCategory);
-
 const RecipeSchema = z.object({
   name: z.string(),
   category: z.nativeEnum(RecipeCategory),
@@ -31,36 +29,27 @@ const RecipeSchema = z.object({
   imageUrl: z.string().optional(),
 });
 
+function getWeightedRandomCategory(): RecipeCategory {
+  const random = Math.random();
+
+  if (random < 0.1) {
+    return RecipeCategory.International;
+  } else if (random < 0.55) {
+    return RecipeCategory.Bread;
+  } else {
+    return RecipeCategory.CookingAndBaking;
+  }
+}
+
 export async function GET() {
   try {
-    const randomCategory =
-      categories[Math.floor(Math.random() * categories.length)];
+    const randomCategory = getWeightedRandomCategory();
 
-    const existingRecipes = await db.query.recipes.findMany({
-      columns: { name: true },
-    });
-    const existingNames = existingRecipes.map((r) => r.name);
+    const recipeName = await generateRecipeName(randomCategory);
 
-    const prompt = `
-        Generate a unique recipe ${randomCategory} sourdough recipe.
-        Here are the existing recipes to avoid duplicates: ${existingNames.join(", ")}.
-        Return only the name of the recipe.
-    `;
+    const { recipe, id } = await generateRecipe(recipeName);
 
-    const result = await openai.beta.chat.completions.parse({
-      model: "gpt-4o-mini",
-      messages: [{ role: "user", content: prompt }],
-    });
-
-    const recipeName = result.choices[0].message.content;
-
-    if (!recipeName) {
-      throw new Error("Failed to generate recipe name");
-    }
-
-    const { success, recipe, id } = await generateRecipe(recipeName);
-
-    if (!success || !recipe || !id) {
+    if (!recipe || !id) {
       throw new Error("Failed to generate recipe");
     }
 
@@ -92,6 +81,31 @@ export async function GET() {
       { status: 500 }
     );
   }
+}
+
+async function generateRecipeName(category: RecipeCategory): Promise<string> {
+  const existingRecipes = await db.query.recipes.findMany({
+    columns: { name: true },
+  });
+  const existingNames = existingRecipes.map((r) => r.name);
+
+  const prompt = `
+      Generate a unique recipe ${category} sourdough recipe.
+      Here are the existing recipes to avoid duplicates: ${existingNames.join(", ")}.
+      Return only the name of the recipe.
+  `;
+
+  const result = await openai.beta.chat.completions.parse({
+    model: "gpt-4o-mini",
+    messages: [{ role: "user", content: prompt }],
+  });
+
+  const recipeName = result.choices[0].message.content;
+  if (!recipeName) {
+    throw new Error("Failed to generate recipe name");
+  }
+
+  return recipeName;
 }
 
 async function createWebflowItem(recipe: Recipe) {
@@ -177,13 +191,12 @@ async function generateRecipe(recipeName: string) {
     }
 
     return {
-      success: true,
       id,
       recipe: formattedRecipe,
     };
   } catch (error) {
     console.error("Error generating recipe:", error);
-    return { success: false, message: "Failed to generate recipe" };
+    throw error;
   }
 }
 
