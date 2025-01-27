@@ -245,7 +245,7 @@ async function generateImage(prompt: string) {
     };
 
     let attempts = 0;
-    const maxAttempts = 12;
+    const maxAttempts = 36;
     const delay = 5000;
 
     while (attempts < maxAttempts) {
