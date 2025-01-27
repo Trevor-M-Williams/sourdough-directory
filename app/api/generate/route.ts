@@ -190,7 +190,7 @@ async function generateRecipe(recipeName: string) {
       throw new Error("Failed to create Webflow item");
     }
 
-    formattedRecipe.imageUrl = webflowResponse?.fieldData?.image;
+    formattedRecipe.imageUrl = webflowResponse?.fieldData?.image?.url;
 
     return {
       id: webflowResponse.id,
