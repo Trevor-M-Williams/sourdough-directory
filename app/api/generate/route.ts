@@ -95,62 +95,40 @@ export async function GET() {
 }
 
 async function createWebflowItem(recipe: Recipe) {
-  const maxRetries = 3;
-  const retryDelay = 5000; // 5 seconds
+  try {
+    // Normalize the string to decompose the special characters, then remove diacritics and non-alphanumeric chars
+    const normalizedSlug = recipe.name
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-") // Replace non-alphanumeric chars with hyphens
+      .replace(/^-+|-+$/g, ""); // Remove leading/trailing hyphens
 
-  for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    try {
-      // Normalize the string to decompose the special characters, then remove diacritics and non-alphanumeric chars
-      const normalizedSlug = recipe.name
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-") // Replace non-alphanumeric chars with hyphens
-        .replace(/^-+|-+$/g, ""); // Remove leading/trailing hyphens
-
-      const response = await client.collections.items.createItemLive(
-        process.env.WEBFLOW_COLLECTION_ID!,
-        {
-          isArchived: false,
-          isDraft: false,
-          fieldData: {
-            name: recipe.name,
-            slug: normalizedSlug,
-            category: recipe.category,
-            ingredients: recipe.ingredients,
-            instructions: recipe.instructions,
-            "prep-time-2": recipe.prepTime,
-            "cook-time": recipe.cookTime,
-            servings: recipe.servings,
-            calories: recipe.calories,
-            image: recipe.imageUrl,
-          },
-        }
-      );
-
-      return { success: true, id: response.id };
-    } catch (error: any) {
-      console.error(
-        `Error creating Webflow item (attempt ${attempt}/${maxRetries}):`,
-        error
-      );
-
-      // If it's a 409 conflict error and we haven't exhausted retries, wait and try again
-      if (error?.status === 409 && attempt < maxRetries) {
-        console.log(`Retrying in ${retryDelay / 1000} seconds...`);
-        await new Promise((resolve) => setTimeout(resolve, retryDelay));
-        continue;
+    const response = await client.collections.items.createItemLive(
+      process.env.WEBFLOW_COLLECTION_ID!,
+      {
+        isArchived: false,
+        isDraft: false,
+        fieldData: {
+          name: recipe.name,
+          slug: normalizedSlug,
+          category: recipe.category,
+          ingredients: recipe.ingredients,
+          instructions: recipe.instructions,
+          "prep-time-2": recipe.prepTime,
+          "cook-time": recipe.cookTime,
+          servings: recipe.servings,
+          calories: recipe.calories,
+          image: recipe.imageUrl,
+        },
       }
+    );
 
-      // If we've exhausted retries or it's a different error, return failure
-      return { success: false, error };
-    }
+    return { success: true, id: response.id };
+  } catch (error) {
+    console.error("Error creating Webflow item:", error);
+    return { success: false, error };
   }
-
-  return {
-    success: false,
-    error: new Error("Max retries exceeded for creating Webflow item"),
-  };
 }
 
 async function generateRecipe(recipeName: string) {
